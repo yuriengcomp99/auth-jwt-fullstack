@@ -1,14 +1,12 @@
 import { Request, Response } from "express"
-import { LoginUseCase } from "../../use-cases/auth/login.usecase.js"
-import { UserRepository } from "../../repositories/user/user.repository.js"
+import { makeLoginUseCase } from "../../factories/auth/make-login.js"
 
 export class LoginController {
   async handle(req: Request, res: Response) {
     try {
       const { email, password } = req.body
 
-      const userRepository = new UserRepository()
-      const loginUseCase = new LoginUseCase(userRepository)
+      const loginUseCase = makeLoginUseCase()
 
       const result = await loginUseCase.execute({
         email,
