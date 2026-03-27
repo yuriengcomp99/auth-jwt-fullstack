@@ -1,11 +1,8 @@
-import { Router } from "express"
-import { RegisterController } from "../controllers/auth/register.controller.js"
-import { LoginController } from "../controllers/auth/login.controller.js"
+import { makeRegisterController } from "../factories/auth/make-register.js"
+import { makeLoginController } from "../factories/auth/make-login.js"
 
-const router = Router()
-
-const registerController = new RegisterController()
-const loginController = new LoginController()
+const registerController = makeRegisterController()
+const loginController = makeLoginController()
 
 router.post("/register", (req, res) => {
   return registerController.handle(req, res)
@@ -14,5 +11,3 @@ router.post("/register", (req, res) => {
 router.post("/login", (req, res) => {
   return loginController.handle(req, res)
 })
-
-export default router
