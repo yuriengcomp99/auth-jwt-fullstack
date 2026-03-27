@@ -1,14 +1,14 @@
 import { Request, Response } from "express"
-import { makeLoginUseCase } from "../../factories/auth/make-login.js"
+import { LoginUseCase } from "../../use-cases/auth/login.usecase.js"
 
 export class LoginController {
+  constructor(private loginUseCase: LoginUseCase) {}
+
   async handle(req: Request, res: Response) {
     try {
       const { email, password } = req.body
 
-      const loginUseCase = makeLoginUseCase()
-
-      const result = await loginUseCase.execute({
+      const result = await this.loginUseCase.execute({
         email,
         password
       })
