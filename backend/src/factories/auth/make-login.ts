@@ -1,10 +1,13 @@
 import { UserRepository } from "../../repositories/user/user.repository.js"
 import { LoginUseCase } from "../../use-cases/auth/login.usecase.js"
+import { LoginController } from "../../controllers/auth/login.controller.js"
 
-export function makeLoginUseCase() {
+export function makeLoginController() {
   const userRepository = new UserRepository()
 
   const loginUseCase = new LoginUseCase(userRepository)
 
-  return loginUseCase
+  const loginController = new LoginController(loginUseCase)
+
+  return loginController
 }
