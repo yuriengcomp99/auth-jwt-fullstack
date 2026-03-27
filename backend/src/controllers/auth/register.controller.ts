@@ -1,14 +1,14 @@
 import { Request, Response } from "express"
-import { makeRegisterUseCase } from "../../factories/auth/make-register.js"
+import { RegisterUseCase } from "../../use-cases/auth/register.usecase.js"
 
 export class RegisterController {
+  constructor(private registerUseCase: RegisterUseCase) {}
+
   async handle(req: Request, res: Response) {
     try {
       const { name, email, password } = req.body
 
-      const registerUseCase = makeRegisterUseCase()
-
-      const user = await registerUseCase.execute({
+      const user = await this.registerUseCase.execute({
         name,
         email,
         password
