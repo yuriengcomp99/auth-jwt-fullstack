@@ -15,7 +15,15 @@ export class UpdateUserUseCase {
     const user = await this.userRepository.findById(id)
 
     if (!user) {
-      throw new Error("Usuário não encontrado")
+      throw new Error("User not found")
+    }
+    
+    if (email) {
+      const userWithSameEmail = await this.userRepository.findByEmail(email)
+
+      if (userWithSameEmail && userWithSameEmail.id !== id) {
+        throw new Error("Email already in use. Please use another email.")
+      }
     }
 
     let hashedPassword: string | undefined
