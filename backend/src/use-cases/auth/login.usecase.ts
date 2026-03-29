@@ -22,9 +22,12 @@ export class LoginUseCase {
     }
 
     const token = jwt.sign(
-      { userId: user.id },
+      {},
       process.env.JWT_SECRET as string,
-      { expiresIn: "15m" }
+      {
+        subject: user.id,
+        expiresIn: "15m",
+      }
     )
 
     return {
