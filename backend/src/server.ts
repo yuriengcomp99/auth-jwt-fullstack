@@ -3,6 +3,10 @@ import dotenv from "dotenv"
 import cors from "cors"
 import authRoutes from "./routes/auth.routes.js"
 import userRoutes  from "./routes/user.routes.js"
+import swaggerUi from "swagger-ui-express"
+import { swaggerSpec } from "./docs/swagger"
+
+
 
 dotenv.config()
 
@@ -14,6 +18,9 @@ app.use(express.json())
 app.use("/auth", authRoutes)
 
 app.use("/users", userRoutes)
+
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+
 
 app.get("/", (req, res) => {
   return res.json({ message: "API running" })
