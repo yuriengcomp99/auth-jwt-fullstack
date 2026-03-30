@@ -6,7 +6,14 @@ export class UpdateUserController {
 
   async handle(req: Request, res: Response) {
     try {
-      const { id } = req.params
+      const id = req.userId
+
+      if (!id) {
+        return res.status(401).json({
+          error: "Unauthorized",
+        })
+      }
+
       const { name, email, password } = req.body
 
       const user = await this.updateUserUseCase.execute({
