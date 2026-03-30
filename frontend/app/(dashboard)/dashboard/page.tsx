@@ -24,7 +24,9 @@ export default function DashboardPage() {
     loadUser()
   }, [])
 
-  if (loading) return <p>Carregando...</p>
+  if (loading || !user) {
+    return <p>Carregando...</p>
+  }
 
   return (
     <div>

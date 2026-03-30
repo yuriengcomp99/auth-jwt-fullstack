@@ -5,7 +5,7 @@ export default function Sidebar() {
 
       <nav className="flex flex-col gap-3">
         <a href="/dashboard">Dashboard</a>
-        <a href="/dashboard/profile">Perfil</a>
+        <a href="/profile">Perfil</a>
       </nav>
     </div>
   )
