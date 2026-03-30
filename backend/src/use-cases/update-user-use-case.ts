@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt"
-import { UserRepository } from "../repositories/user/user.repository.js"
+import { UserRepository } from "../repositories/user/user-repository.js"
 
 interface UpdateUserRequest {
   id: string

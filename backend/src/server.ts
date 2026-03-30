@@ -1,8 +1,8 @@
 import express from "express"
 import dotenv from "dotenv"
 import cors from "cors"
-import authRoutes from "./routes/auth.routes.js"
-import userRoutes  from "./routes/user.routes.js"
+import authRoutes from "./routes/auth-routes.js"
+import userRoutes  from "./routes/user-routes.js"
 import swaggerUi from "swagger-ui-express"
 import { swaggerSpec } from "./docs/swagger"
 

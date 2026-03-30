@@ -1,4 +1,4 @@
-import { UserRepository } from "../../repositories/user/user.repository.js"
+import { UserRepository } from "../../repositories/user/user-repository.js"
 import bcrypt from "bcrypt"
 
 export class RegisterUseCase {

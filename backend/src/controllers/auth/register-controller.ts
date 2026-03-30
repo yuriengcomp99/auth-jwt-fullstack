@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { RegisterUseCase } from "../../use-cases/auth/register.usecase.js"
+import { RegisterUseCase } from "../../use-cases/auth/register-usecase.js"
 
 export class RegisterController {
   constructor(private registerUseCase: RegisterUseCase) {}

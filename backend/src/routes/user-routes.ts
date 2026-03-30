@@ -1,6 +1,6 @@
 import { Router } from "express"
 import { makeUpdateUserController } from "../factories/make-update-user-controller.js"
-import { authMiddleware } from "../middlewares/auth.middleware.js"
+import { authMiddleware } from "../middlewares/auth-middleware.js"
 import { makeDeleteUserController } from "../factories/make-delete-user-controller.js"
 import { makeGetUserProfileController } from "../factories/make-get-user-controller.js"
 

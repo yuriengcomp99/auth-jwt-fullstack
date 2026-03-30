@@ -1,6 +1,6 @@
 import { GetUserProfileController } from "../controllers/get-user-controller.js"
 import { GetUserProfileUseCase } from "../use-cases/get-user-use-case.js"
-import { UserRepository } from "../repositories/user/user.repository.js"
+import { UserRepository } from "../repositories/user/user-repository.js"
 
 export function makeGetUserProfileController() {
   const userRepository = new UserRepository()
