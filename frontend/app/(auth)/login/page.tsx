@@ -34,7 +34,7 @@ export default function LoginPage() {
       
     } catch (err: any) {
 
-      Swal.fire({
+      await Swal.fire({
         icon: "error",
         title: "Login failed",
         text: err.message || "Invalid credentials",
