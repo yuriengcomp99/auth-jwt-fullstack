@@ -41,6 +41,7 @@ export default function RegisterPage() {
         title: "Register failed",
         text: err.message || "Register User Error",
       })
+      
     } finally {
       setLoading(false)
     }
