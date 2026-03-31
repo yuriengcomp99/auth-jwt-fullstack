@@ -10,7 +10,7 @@ export function Button({
   const base = "px-4 py-2 rounded text-white transition"
 
   const variants = {
-    primary: "bg-blue-500 hover:bg-blue-600",
+    primary: "bg-primary hover:bg-primary-dark text-sm font-medium",
     danger: "bg-red-500 hover:bg-red-600",
   }
 
